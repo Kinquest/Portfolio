@@ -1,0 +1,98 @@
+/* styles.css - Custom styles for Joaquin's IT Tech Support Portfolio */
+
+:root {
+    --cyan-main: #00bcd4;
+    --cyan-dark: #0097a7;
+    --cyan-light: #e0f7fa;
+    --cyan-gradient: linear-gradient(90deg, #00bcd4 60%, #0097a7 100%);
+    --text-dark: #222b2e;
+    --text-light: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cyan-light);
+    color: var(--text-dark);
+}
+
+.bg-cyan {
+    background-color: var(--cyan-main) !important;
+}
+.bg-cyan-gradient {
+    background: var(--cyan-gradient) !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar {
+    transition: background 0.4s;
+}
+
+.menu-link {
+    position: relative;
+    transition: color 0.3s;
+}
+.menu-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--cyan-dark);
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.menu-link:hover, .menu-link.active {
+    color: var(--cyan-dark) !important;
+}
+.menu-link:hover::after, .menu-link.active::after {
+    width: 100%;
+}
+
+header {
+    background: var(--cyan-gradient);
+    color: var(--text-light);
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid var(--cyan-main);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,188,212,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #fff;
+}
+.card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(0,188,212,0.18);
+}
+
+footer {
+    background: var(--cyan-dark);
+    color: var(--text-light);
+}
+
+#formAlert {
+    transition: opacity 0.3s;
+}
+
+@media (max-width: 767px) {
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
